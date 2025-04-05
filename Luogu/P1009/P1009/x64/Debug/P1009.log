@@ -1,10 +1,10 @@
 ﻿  FileName.cpp
-D:\Code\C++\C_problems\Luogu\P1009\FileName.cpp(32,11): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“__int64”
-      D:\Code\C++\C_problems\Luogu\P1009\FileName.cpp(32,11):
+D:\Code\C++\C_problems\Luogu\P1009\FileName.cpp(33,21): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“__int64”
+      D:\Code\C++\C_problems\Luogu\P1009\FileName.cpp(33,21):
       请考虑在格式字符串中使用“%lld”
-      D:\Code\C++\C_problems\Luogu\P1009\FileName.cpp(32,11):
+      D:\Code\C++\C_problems\Luogu\P1009\FileName.cpp(33,21):
       请考虑在格式字符串中使用“%Id”
-      D:\Code\C++\C_problems\Luogu\P1009\FileName.cpp(32,11):
+      D:\Code\C++\C_problems\Luogu\P1009\FileName.cpp(33,21):
       请考虑在格式字符串中使用“%I64d”
   
   P1009.vcxproj -> D:\Code\C++\C_problems\Luogu\P1009\x64\Debug\P1009.exe

@@ -1,7 +1,6 @@
 #include<iostream>
 #include<stdio.h>
 using namespace std;
-#define int long long
 int A[1005], B[1005];
 int n;
 signed main() {
@@ -30,7 +29,7 @@ signed main() {
 	bool flag = 1;
 	for (int i = 100; i >= 0; i--) {
 		if (A[i] != 0) flag = 0;
-		if (!flag) printf("%d", A[i]);
+		if (!flag) cout << A[i];
 	}
 	return 0;
 }

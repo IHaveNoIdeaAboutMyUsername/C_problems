@@ -9,15 +9,16 @@
 using namespace std;
 
 constexpr int MAXN = 9999;
-// MAXN ÊÇÒ»Î»ÖĞ×î´óµÄÊı×Ö
+// MAXN ï¿½ï¿½Ò»Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 constexpr int MAXSIZE = 10024;
-// MAXSIZE ÊÇÎ»Êı
+// MAXSIZE ï¿½ï¿½Î»ï¿½ï¿½
 constexpr int DLEN = 4;
 
-// DLEN ¼ÇÂ¼Ñ¹¼¸Î»
+long long cnt = 0;
+// DLEN ï¿½ï¿½Â¼Ñ¹ï¿½ï¿½Î»
 struct Big {
     int a[MAXSIZE], len;
-    bool flag;  // ±ê¼Ç·ûºÅ'-'
+    bool flag;  // ï¿½ï¿½Ç·ï¿½ï¿½ï¿½'-'
 
     Big() {
         len = 1;
@@ -37,7 +38,7 @@ struct Big {
     Big operator^(const int&) const;
     // TODO: Big ^ Big;
 
-    // TODO: Big Î»ÔËËã;
+    // TODO: Big Î»ï¿½ï¿½ï¿½ï¿½;
 
     Big operator%(const Big&) const;
     // TODO: Big ^ Big;
@@ -51,7 +52,7 @@ Big::Big(const int b) {
     len = 0;
     // memset(a,0,sizeof a);
     CLR(a);
-	flag = false;
+    flag = false;
     while (d > MAXN) {
         c = d - (d / (MAXN + 1) * (MAXN + 1));
         d = d / (MAXN + 1);
@@ -79,7 +80,7 @@ Big::Big(const char* s) {
 Big::Big(const Big& T) : len(T.len) {
     CLR(a);
     f(i, 0, len) a[i] = T.a[i];
-    // TODO:ÖØÔØ´Ë´¦£¿
+    // TODO:ï¿½ï¿½ï¿½Ø´Ë´ï¿½ï¿½ï¿½
 }
 
 Big& Big::operator=(const Big& T) {
@@ -146,32 +147,33 @@ Big Big::operator-(const Big& T) const {
 
 Big Big::operator*(const Big& T) const {
     Big res;
-    res.len = len + T.len; // ³õÊ¼»¯½á¹û³¤¶ÈÎª×î´ó¿ÉÄÜÖµ
-    long long temp; // Ê¹ÓÃ¸ü´óµÄÊı¾İÀàĞÍ·ÀÖ¹ÖĞ¼äÒç³ö
+    res.len = len + T.len; // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+    long long temp; // Ê¹ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½Ö¹ï¿½Ğ¼ï¿½ï¿½ï¿½ï¿½
     int up;
 
-    // Íâ²ãÑ­»·±éÀúµ±Ç°¶ÔÏóµÄÃ¿Ò»Î»
+    // ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»Î»
     f(i, 0, len - 1) {
         up = 0;
-        // ÄÚ²ãÑ­»·±éÀú²ÎÊı¶ÔÏóµÄÃ¿Ò»Î»
+        // ï¿½Ú²ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»Î»
+
         f(j, 0, T.len - 1) {
-            // ¼ÆËã³Ë»ı²¢¼ÓÉÏµ±Ç°Î»ÖÃµÄÖµºÍ½øÎ»
+            // ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½Ç°Î»ï¿½Ãµï¿½Öµï¿½Í½ï¿½Î»
             temp = (long long)a[i] * T.a[j] + res.a[i + j] + up;
-            // ¼ÆËãµ±Ç°Î»µÄÖµºÍĞÂµÄ½øÎ»
+            // ï¿½ï¿½ï¿½ãµ±Ç°Î»ï¿½ï¿½Öµï¿½ï¿½ï¿½ÂµÄ½ï¿½Î»
             res.a[i + j] = temp % (MAXN + 1);
             up = temp / (MAXN + 1);
         }
-        // ´¦ÀíÊ£Óà½øÎ»£¨·ÅÖÃµ½¸ßÎ»£©
+        // ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Î»ï¿½ï¿½
         if (up > 0) {
-            res.a[i + T.len] += up; // ×¢ÒâÕâÀïÊÇ += ¶ø·ÇÖ±½Ó¸³Öµ
-            // ¼ì²éÊÇ·ñĞèÒªÀ©Õ¹½á¹û³¤¶È
+            res.a[i + T.len] += up; // ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ += ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó¸ï¿½Öµ
+            // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (i + T.len >= res.len && res.a[i + T.len] != 0) {
                 res.len = i + T.len + 1;
             }
         }
     }
 
-    // È¥³ıÇ°µ¼Áã
+    // È¥ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
     while (res.len > 1 && res.a[res.len - 1] == 0) {
         --res.len;
     }
@@ -193,12 +195,22 @@ Big Big::operator/(const int& b) const {
 
 Big Big::operator%(const Big& b) const {
     Big remainder = *this;
+    if (remainder < b) return remainder;
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½Î»Î»ï¿½ï¿½
+    int shift = remainder.len - b.len;
+    Big base = b;
+    base = base * Big(MAXN + 1).operator^(shift); // ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
+
     while (!(remainder < b)) {
-        remainder = remainder - b;
+        while (!(remainder < base)) {
+            remainder = remainder - base;
+        }
+        base = base / (MAXN + 1); // ï¿½ï¿½ï¿½ï¿½Ò»Î»
     }
+
     return remainder;
 }
-
 Big Big::operator^(const int& n) const {
     Big t(n), res(1);
     int y = n;
@@ -240,32 +252,40 @@ void print(const Big& s) {
 
 int main() {
     int p;
-	cin >> p;
-    Big ans = 1, k = 1, m = 2;
+    cin >> p;
+    Big ans = 1, m = 2;
     cout << int(log10(2) * p + 1) << endl;
-    f(i, 1, 500) k = k * 10;
+    cout << 1 << endl;
+
+    // ä¿®å¤ç‚¹1: å…ˆè®¡ç®—æ¨¡æ•° k = 10^500
+    Big k = 1;
+    f(i, 1, 500) k = k * 10;  // æ­£ç¡®åˆå§‹åŒ– k ä¸º 10^500
+
+    // ä¿®å¤ç‚¹2: ä½¿ç”¨æ­£ç¡®çš„æ¨¡æ•°è¿›è¡Œå¿«é€Ÿå¹‚è¿ç®—
     for (; p; p >>= 1) {
-		if (p & 1) {
-			ans = ans * m;
-			ans = ans % k;
-		}
-		m = m * m;
-		m = m % k;
+        if (p & 1) {
+            ans = ans * m;
+            ans = ans % k;  // ä½¿ç”¨åˆå§‹åŒ–å¥½çš„å¤§æ¨¡æ•°
+        }
+        m = m * m;
+        m = m % k;          // ä½¿ç”¨åˆå§‹åŒ–å¥½çš„å¤§æ¨¡æ•°
     }
+    cout << 2 << endl;
     ans = ans - 1;
     int sze = 500 - ans.len;
-	int t = 0;
+    int t = 0;
     if (sze > 0) {
         f(i, 1, sze) {
             cout << 0;
-			if (i % 50 == 0) cout << endl;
+            if (i % 50 == 0) cout << endl;
         }
-		t = sze;
+        t = sze;
     }
+    cout << 3 << endl;
     for (auto i = ans.len - 1; i >= 0 && t <= 500; --i) {
         ++t;
-		cout << ans.a[i];
-		if (t % 50 == 0) cout << endl;
-	}
-	return 0;
+        cout << ans.a[i];
+        if (t % 50 == 0) cout << endl;
+    }
+    return 0;
 }

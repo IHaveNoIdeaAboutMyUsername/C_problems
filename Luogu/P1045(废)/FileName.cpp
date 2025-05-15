@@ -1,6 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<cstring>
+#include<cmath>
 
 #define CLR(a) memset(a,0,sizeof(a))
 #define f(i, j, k) for(int i = j; i <= k; ++i)

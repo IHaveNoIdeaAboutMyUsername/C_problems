@@ -1,0 +1,6 @@
+﻿  P11230.cpp
+D:\Code\C++\C_problems\Luogu\P11230\P11230.cpp(4,22): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P11230\P11230.cpp(5,22): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P11230\P11230.cpp(16,26): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P11230\P11230.cpp(36,27): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  P11230.vcxproj -> D:\Code\C++\C_problems\Luogu\P11230\x64\Debug\P11230.exe

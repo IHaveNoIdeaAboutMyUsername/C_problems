@@ -18,5 +18,8 @@
     <ClCompile Include="P11230.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="P11230 - 2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -26,12 +26,13 @@ int main() {
 		if (((int)sqrt(delta) * 10) * ((int)sqrt(delta) * 10) == delta * 100) {
 			b2 += sqrt(delta);
 			//	cout << (10 * b2 / (2 * a2)) * 2 * a2 << " " << b2 << endl;
-			if ((10 * b2 / (2 * a2)) * 2 * a2 == 10 * b2) cout << b2 / a2;
-			else cout << (b2 / gcd(abs(a2), abs(b2))) << "/" << (a2 / gcd(abs(a2), abs(b2)));
+			if ((10 * b2 / (2 * a2)) * 2 * a2 == 10 * b2 && b2 != 0) cout << b2 / a2;
+			else if (b2 != 0) cout << (b2 / gcd(abs(a2), abs(b2))) << "/" << (a2 / gcd(abs(a2), abs(b2)));
+			else if (b2 == 0) cout << "0";
 		}
 		else {
-			if ((10 * b2 / (2 * a2)) * 2 * a2 == 10 * b2 && b != 0) cout << b2 / a2 << "+";
-			else if (b != 0) cout << (b2 / gcd(abs(a2), abs(b2))) << "/" << (a2 / gcd(abs(a2), abs(b2))) << "+";
+			if ((10 * b2 / (2 * a2)) * 2 * a2 == 10 * b2 && b2 != 0) cout << b2 / a2 << "+";
+			else if (b2 != 0) cout << (b2 / gcd(abs(a2), abs(b2))) << "/" << (a2 / gcd(abs(a2), abs(b2))) << "+";
 			int tmp = 1;
 			for (int i = 2; i * i <= delta; i++) {
 				while (delta % (i * i) == 0) {

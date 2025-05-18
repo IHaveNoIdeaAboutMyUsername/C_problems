@@ -8,7 +8,6 @@ using namespace std;
 int a, b, c;
 static int gcd(int a, int b) { return b == 0 ? a : gcd(b, a % b); }
 int main() {
-//	freopen("P9750_2.in", "r", stdin);
 	int T, M;
 	cin >> T >> M;
 	while (T--) {
@@ -25,13 +24,13 @@ int main() {
 	//	cout << b2 << " " << a2 << " " << delta << endl;
 		if (((int)sqrt(delta) * 10) * ((int)sqrt(delta) * 10) == delta * 100) {
 			b2 += sqrt(delta);
-			//	cout << (10 * b2 / (2 * a2)) * 2 * a2 << " " << b2 << endl;
-			if ((10 * b2 / (2 * a2)) * 2 * a2 == 10 * b2 && b2 != 0) cout << b2 / a2;
+			//	cout << (10 * b2 / (2 * a2)) * 2 * a2 << " " << b2 << endl;        (100 * b2 / (2 * a2)) * 2 * a2 == 100 * b2 && b2 != 0 && b2 / a2 != 0
+			if (b2 / a2 == (float)b2 / float(a2) && b2 != 0) cout << b2 / a2;
 			else if (b2 != 0) cout << (b2 / gcd(abs(a2), abs(b2))) << "/" << (a2 / gcd(abs(a2), abs(b2)));
 			else if (b2 == 0) cout << "0";
 		}
 		else {
-			if ((10 * b2 / (2 * a2)) * 2 * a2 == 10 * b2 && b2 != 0) cout << b2 / a2 << "+";
+			if (b2 / a2 == (float)b2 / float(a2) && b2 != 0) cout << b2 / a2 << "+";
 			else if (b2 != 0) cout << (b2 / gcd(abs(a2), abs(b2))) << "/" << (a2 / gcd(abs(a2), abs(b2))) << "+";
 			int tmp = 1;
 			for (int i = 2; i * i <= delta; i++) {
@@ -53,3 +52,9 @@ int main() {
 	}
 	return 0;
 }
+/*
+3 1000
+364 -692 0
+421 273 0
+95 -38 0
+*/

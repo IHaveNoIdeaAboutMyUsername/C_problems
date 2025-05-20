@@ -1,0 +1,4 @@
+﻿  P8815.cpp
+D:\Code\C++\C_problems\Luogu\P8815\P8815.cpp(6,19): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P8815\P8815.cpp(54,14): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  P8815.vcxproj -> D:\Code\C++\C_problems\Luogu\P8815\x64\Debug\P8815.exe

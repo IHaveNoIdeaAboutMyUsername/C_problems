@@ -1,0 +1,5 @@
+﻿  P5905.cpp
+D:\Code\C++\C_problems\Luogu\P5905\P5905.cpp(6,17): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P5905\P5905.cpp(69,34): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P5905\P5905.cpp(90,19): warning C4244: “+=”: 从“__int64”转换到“int”，可能丢失数据
+  P5905.vcxproj -> D:\Code\C++\C_problems\Luogu\P5905\x64\Debug\P5905.exe

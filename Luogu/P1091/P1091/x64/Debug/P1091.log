@@ -1,0 +1,6 @@
+﻿  P1091.cpp
+D:\Code\C++\C_problems\Luogu\P1091\P1091.cpp(3,19): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P1091\P1091.cpp(3,30): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P1091\P1091.cpp(11,11): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+D:\Code\C++\C_problems\Luogu\P1091\P1091.cpp(23,11): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+  P1091.vcxproj -> D:\Code\C++\C_problems\Luogu\P1091\x64\Debug\P1091.exe
